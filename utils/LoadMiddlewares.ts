@@ -1,5 +1,3 @@
-import * as path from 'path'
-
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import helmet from 'helmet'
@@ -13,7 +11,6 @@ import rfs from 'rotating-file-stream'
 function setup_log_folder() {
   return rfs.createStream('access.log', {
     interval: '1d',
-    path: path.join(import.meta.url, 'log'),
   })
 }
 
